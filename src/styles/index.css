@@ -21,3 +21,12 @@
   margin-top: 20px;
   height: 70%;
 }
+
+/* buttons */
+button.operator {
+  background-color: #ccb8ee;
+}
+
+button {
+  border-radius: 8px;
+}
