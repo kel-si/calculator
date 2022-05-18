@@ -13,8 +13,7 @@ export default function Container() {
   });
 
   function handleClick(e) {
-    setInput({ operator: "", number: 0, result: e.target.name });
-    console.log("e", e.target.name);
+    setInput({ result: input.result.concat(e.target.name) });
   }
 
   return (
