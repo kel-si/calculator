@@ -46,7 +46,7 @@ export default function Buttons(props) {
       <button className="operator" name="-" onClick={props.handleClick}>
         -
       </button>
-      <button className="clear longer" name="AC" onClick={props.handleClick}>
+      <button className="clear longer" name="AC" onClick={props.clearInput}>
         AC
       </button>
       <button className="longer" name="=" onClick={props.handleClick}>

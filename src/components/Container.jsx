@@ -16,10 +16,20 @@ export default function Container() {
     setInput({ result: input.result.concat(e.target.name) });
   }
 
+  function clearInput(e) {
+    if (e.target.name === "AC") {
+      setInput({ result: "0" });
+    }
+  }
+
   return (
     <div className="calc-container">
       <Screen result={input.number ? input.number : input.result} />
-      <Buttons handleClick={handleClick} number={input.number} />
+      <Buttons
+        handleClick={handleClick}
+        number={input.number}
+        clearInput={clearInput}
+      />
     </div>
   );
 }
