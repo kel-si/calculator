@@ -1,7 +1,10 @@
-export default function Screen() {
+import { useState } from "react";
+
+export default function Screen(props) {
+  console.log("props", props);
   return (
     <div className="calc-screen">
-      <div className="result">0</div>
+      <div className="result">{props.result}</div>
     </div>
   );
 }
