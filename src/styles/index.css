@@ -25,7 +25,12 @@ body {
 
 .result {
   font-size: 3rem;
-  text-align: end;
+  text-align: right;
+}
+
+div.result {
+  height: 100%;
+  padding: 5px;
 }
 
 /* buttons */
@@ -51,6 +56,10 @@ button {
 
 button.operator {
   background-color: #dbd56e;
+}
+
+button.clear {
+  background-color: rgb(233, 138, 22);
 }
 
 button:hover {
