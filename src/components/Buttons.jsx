@@ -10,7 +10,7 @@ export default function Buttons(props) {
       <button className="number" name="9" onClick={props.handleClick}>
         9
       </button>
-      <button className="operator" name="/" onClick={props.handleClick}>
+      <button className="operator" name="/" onClick={props.assignOperator}>
         /
       </button>
       <button className="number" name="4" onClick={props.handleClick}>
@@ -22,7 +22,7 @@ export default function Buttons(props) {
       <button className="number" name="6" onClick={props.handleClick}>
         6
       </button>
-      <button className="operator" name="*" onClick={props.handleClick}>
+      <button className="operator" name="*" onClick={props.assignOperator}>
         x
       </button>
       <button className="number" name="1" onClick={props.handleClick}>
@@ -34,7 +34,7 @@ export default function Buttons(props) {
       <button className="number" name="3" onClick={props.handleClick}>
         3
       </button>
-      <button className="operator" name="+" onClick={props.handleClick}>
+      <button className="operator" name="+" onClick={props.assignOperator}>
         +
       </button>
       <button className="number longer" name="0" onClick={props.handleClick}>
@@ -43,13 +43,13 @@ export default function Buttons(props) {
       <button name="." onClick={props.handleClick}>
         .
       </button>
-      <button className="operator" name="-" onClick={props.handleClick}>
+      <button className="operator" name="-" onClick={props.assignOperator}>
         -
       </button>
       <button className="clear longer" name="AC" onClick={props.clearInput}>
         AC
       </button>
-      <button className="longer" name="=" onClick={props.handleClick}>
+      <button className="longer" onClick={props.equals} name="=">
         =
       </button>
     </div>
