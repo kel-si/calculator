@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 import Screen from "./Screen";
 import Buttons from "./Buttons";
-
 import "../styles/index.css";
 
 export default function Container() {
@@ -14,11 +12,12 @@ export default function Container() {
 
   //ability to add a decimal place
   function addDecimal(e) {
+    const decimal = e.target.name;
     setInput({
       ...input,
-      number: !input.number.toString().includes(".")
-        ? input.number + e.target.name
-        : input.number,
+      number: input.number.toString().includes(".")
+        ? input.number // will not add another decimal if one is already present
+        : input.number + decimal,
     });
   }
 
@@ -31,10 +30,10 @@ export default function Container() {
       number:
         input.number === 0 && value === "0"
           ? "0"
-          : input.number % 1 === 0
-          ? Number(input.number + value)
-          : input.num + value,
-      result: !input.operator ? 0 : input.result,
+          : input.number % 1 === 0 // whole number?
+          ? Number(input.number + value) //add to current number
+          : input.number + value,
+      result: input.operator ? input.result : 0,
     });
   }
 
@@ -67,7 +66,7 @@ export default function Container() {
       return num1 * num2;
     }
     if (operator === "/") {
-      return (num1 / num2).toFixed(3);
+      return num1 / num2;
     }
   }
 
