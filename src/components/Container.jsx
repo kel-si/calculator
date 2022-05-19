@@ -12,10 +12,6 @@ export default function Container() {
     result: 0, //result of calculation
   });
 
-  console.log("input", input);
-  console.log("number", input.number);
-  console.log("result", input.result);
-
   //click number button
   function handleClick(e) {
     e.preventDefault();
