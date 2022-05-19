@@ -1,3 +1,5 @@
+//this file could definitely be more DRY
+
 export default function Buttons(props) {
   return (
     <div className="calc-button-list">
@@ -40,7 +42,7 @@ export default function Buttons(props) {
       <button className="number longer" name="0" onClick={props.handleClick}>
         0
       </button>
-      <button name="." onClick={props.handleClick}>
+      <button name="." onClick={props.addDecimal}>
         .
       </button>
       <button className="operator" name="-" onClick={props.assignOperator}>

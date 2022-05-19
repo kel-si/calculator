@@ -12,6 +12,16 @@ export default function Container() {
     result: 0, //result of calculation
   });
 
+  //ability to add a decimal place
+  function addDecimal(e) {
+    setInput({
+      ...input,
+      number: !input.number.toString().includes(".")
+        ? input.number + e.target.name
+        : input.number,
+    });
+  }
+
   //click number button
   function handleClick(e) {
     e.preventDefault();
@@ -57,10 +67,11 @@ export default function Container() {
       return num1 * num2;
     }
     if (operator === "/") {
-      return num1 / num2;
+      return (num1 / num2).toFixed(3);
     }
   }
 
+  //when equal button is clicked
   function equals() {
     if (input.number && input.operator) {
       setInput({
@@ -75,6 +86,10 @@ export default function Container() {
     }
   }
 
+  console.log("input", input);
+  console.log("number", input.number);
+  console.log("result", input.result);
+
   return (
     <div className="calc-container">
       <Screen result={input.number ? input.number : input.result} />
@@ -84,6 +99,7 @@ export default function Container() {
         clearInput={clearInput}
         assignOperator={assignOperator}
         equals={equals}
+        addDecimal={addDecimal}
       />
     </div>
   );
