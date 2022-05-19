@@ -3,7 +3,16 @@
 }
 
 body {
-  background: #f2e9e4;
+  background: #f5f2cc;
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .calc-container {
@@ -24,13 +33,11 @@ body {
 }
 
 .result {
-  font-size: 3rem;
-  text-align: right;
-}
-
-div.result {
   height: 100%;
   padding: 5px;
+  font-size: 3rem;
+  text-align: right;
+  overflow: clip;
 }
 
 /* buttons */
