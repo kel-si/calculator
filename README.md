@@ -2,6 +2,8 @@
 
 ## This is a simple, four function calculator built using React.
 
+![](./docs/calculator.png)
+
 ### Current Bugs or Next Steps
 
 - if an output is too long, it is hidden rather than being cut off or rounded to a certain number of digits
