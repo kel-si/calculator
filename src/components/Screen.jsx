@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Screen(props) {
   return (
     <div className="calc-screen">
