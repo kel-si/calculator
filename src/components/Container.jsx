@@ -7,18 +7,75 @@ import "../styles/index.css";
 
 export default function Container() {
   let [input, setInput] = useState({
-    operator: "",
-    number: 0,
-    result: "0",
+    operator: "", //+ - * /
+    number: 0, // what is currently being entered
+    result: 0, //result of calculation
   });
 
+  console.log("input", input);
+  console.log("number", input.number);
+  console.log("result", input.result);
+
+  //click number button
   function handleClick(e) {
-    setInput({ result: input.result.concat(e.target.name) });
+    e.preventDefault();
+    const value = e.target.name;
+    setInput({
+      ...input,
+      number:
+        input.number === 0 && value === "0"
+          ? "0"
+          : input.number % 1 === 0
+          ? Number(input.number + value)
+          : input.num + value,
+      result: !input.operator ? 0 : input.result,
+    });
   }
 
+  //click operator
+  function assignOperator(e) {
+    setInput({
+      ...input,
+      operator: e.target.name,
+      result: !input.response && input.number ? input.number : input.result,
+      number: 0,
+    });
+  }
+
+  //click AC button
   function clearInput(e) {
     if (e.target.name === "AC") {
-      setInput({ result: "0" });
+      setInput({ ...input, operator: "", number: 0, result: 0 });
+    }
+  }
+
+  //calculate result
+  function calculate(num1, num2, operator) {
+    if (operator === "+") {
+      return num1 + num2;
+    }
+    if (operator === "-") {
+      return num1 - num2;
+    }
+    if (operator === "*") {
+      return num1 * num2;
+    }
+    if (operator === "/") {
+      return num1 / num2;
+    }
+  }
+
+  function equals() {
+    if (input.number && input.operator) {
+      setInput({
+        ...input,
+        result: calculate(
+          Number(input.result),
+          Number(input.number),
+          input.operator
+        ),
+        number: 0,
+      });
     }
   }
 
@@ -29,6 +86,8 @@ export default function Container() {
         handleClick={handleClick}
         number={input.number}
         clearInput={clearInput}
+        assignOperator={assignOperator}
+        equals={equals}
       />
     </div>
   );
