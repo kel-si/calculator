@@ -29,10 +29,10 @@ export default function Container() {
       ...input,
       number:
         input.number === 0 && value === "0"
-          ? "0"
+          ? "0" // prevents multiple leading zeros
           : input.number % 1 === 0 // whole number?
-          ? Number(input.number + value) //add to current number
-          : input.number + value,
+          ? Number(input.number + value) //convert to number and add to current number
+          : input.number + value, // add to current number
       result: input.operator ? input.result : 0,
     });
   }
@@ -47,7 +47,7 @@ export default function Container() {
     });
   }
 
-  //click AC button
+  //click AC button; resets default state
   function clearInput(e) {
     if (e.target.name === "AC") {
       setInput({ ...input, operator: "", number: 0, result: 0 });
