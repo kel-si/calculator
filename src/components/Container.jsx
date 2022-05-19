@@ -86,10 +86,6 @@ export default function Container() {
     }
   }
 
-  console.log("input", input);
-  console.log("number", input.number);
-  console.log("result", input.result);
-
   return (
     <div className="calc-container">
       <Screen result={input.number ? input.number : input.result} />
