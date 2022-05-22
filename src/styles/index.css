@@ -6,7 +6,7 @@ body {
   background: #f5f2cc;
   display: flex;
   justify-content: center;
-  padding: 5rem;
+  padding: 2rem;
 }
 
 h1 {
@@ -73,6 +73,10 @@ button:hover {
   background-color: black;
   color: white;
   opacity: 40%;
+}
+
+button:active {
+  background-color: #a9196b;
 }
 
 button.longer {
