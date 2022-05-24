@@ -8,7 +8,7 @@ export default function Screen(props) {
   return (
     <div className="calc-screen">
       <div className="result">
-        {wholeNum.length > 9 ? "ERROR" : resultsStr.substring(0, 9)}
+        {wholeNum[0].length > 8 ? "ERROR" : resultsStr.substring(0, 9)}
       </div>
     </div>
   );
